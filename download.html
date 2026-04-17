@@ -25,11 +25,7 @@
     document.body.appendChild(a);
     a.click();
     a.remove();
-    setTimeout(() => {
-      window.close();
-      // If close didn't work (most mobile browsers), show fallback message
-      document.getElementById('msg').textContent = 'Download started — you can close this tab.';
-    }, 1500);
+    document.getElementById('msg').textContent = 'Download started.';
   </script>
 </body>
 </html>
