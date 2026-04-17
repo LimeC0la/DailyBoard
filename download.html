@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download Lineup Board</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #111; color: #fff; font-family: system-ui, sans-serif;
+           display: flex; flex-direction: column; align-items: center;
+           justify-content: center; min-height: 100dvh; gap: 16px; }
+    p { color: #9ca3af; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <p>Starting download…</p>
+  <script>
+    const a = document.createElement('a');
+    a.href = 'screenshot.png?v=' + Date.now();
+    a.download = 'lineup.png';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  </script>
+</body>
+</html>
