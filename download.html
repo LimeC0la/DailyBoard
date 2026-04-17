@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-  <p>Starting download…</p>
+  <p id="msg">Starting download…</p>
   <script>
     const a = document.createElement('a');
     a.href = 'screenshot.png?v=' + Date.now();
@@ -21,6 +21,11 @@
     document.body.appendChild(a);
     a.click();
     a.remove();
+    setTimeout(() => {
+      window.close();
+      // If close didn't work (most mobile browsers), show fallback message
+      document.getElementById('msg').textContent = 'Download started — you can close this tab.';
+    }, 1500);
   </script>
 </body>
 </html>
