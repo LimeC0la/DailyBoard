@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="120" />
+  <title>Daily Lineup Board</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; display: flex; align-items: center; justify-content: center; min-height: 100dvh; }
+    img { max-width: 100%; max-height: 100dvh; display: block; }
+    #ts { position: fixed; bottom: 6px; right: 10px; color: rgba(255,255,255,0.3); font: 11px/1 monospace; }
+  </style>
+</head>
+<body>
+  <img id="board" alt="Daily Lineup Board" />
+  <span id="ts"></span>
+  <script>
+    const v = Date.now();
+    document.getElementById('board').src = 'screenshot.png?v=' + v;
+    document.getElementById('ts').textContent = new Date(v).toLocaleTimeString();
+  </script>
+</body>
+</html>
